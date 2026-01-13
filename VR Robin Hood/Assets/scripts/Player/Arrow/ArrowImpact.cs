@@ -49,12 +49,19 @@ public class ArrowImpact : MonoBehaviour
     }
 
     public ConfigurableJoint CreateStabJoint(Collision collision, float randomDepth)
-    {
-        var joint = gameObject.AddComponent<ConfigurableJoint>;
+   {
+        var joint = gameObject.AddComponent<ConfigurableJoint>();
         joint.connectedBody = collision.rigidbody;
+        joint.xMotion = ConfigurableJointMotion.Limited;
+        joint.yMotion = ConfigurableJointMotion.Locked;
+        joint.zMotion = ConfigurableJointMotion.Locked;
+
+        var limit = joint.linearLimit;
+        limit.limit = randomDepth;
+        joint.linearLimit = limit;
 
         return joint;
-    }
+   }
 
     private IEnumerator DespawnAfterDelay()
     {
