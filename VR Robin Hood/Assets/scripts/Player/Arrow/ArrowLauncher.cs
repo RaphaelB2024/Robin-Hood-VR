@@ -54,7 +54,7 @@ public class ArrowLauncher : MonoBehaviour
         _inAir = true;
         SetPhysics(true);
 
-        Vector3 force = transform.right * value * _speed;
+        Vector3 force = transform.forward * value * _speed;
         _rigidbody.AddForce(force, ForceMode.Impulse);
 
         StartCoroutine(RotateWithVelocity());
