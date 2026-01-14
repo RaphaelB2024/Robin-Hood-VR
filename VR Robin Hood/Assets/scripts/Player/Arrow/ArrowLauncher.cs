@@ -57,22 +57,7 @@ public class ArrowLauncher : MonoBehaviour
         Vector3 force = transform.forward * value * _speed;
         _rigidbody.AddForce(force, ForceMode.Impulse);
 
-        StartCoroutine(RotateWithVelocity());
-
         _trailSystem.SetActive(true);
-    }
-
-    private IEnumerator RotateWithVelocity()
-    {
-        yield return new WaitForFixedUpdate();
-        while (_inAir)
-        {
-            if(_rigidbody != null && _rigidbody.linearVelocity.sqrMagnitude > 0.01f)
-            {
-                transform.rotation = Quaternion.LookRotation(_rigidbody.linearVelocity, transform.up);
-            }
-            yield return null;
-        }
     }
 
     public void StopFlight()
