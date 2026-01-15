@@ -79,7 +79,7 @@ Transform:
   m_GameObject: {fileID: 4565520730474262546}
   serializedVersion: 2
   m_LocalRotation: {x: 0.010859961, y: 0.7070234, z: -0.010859961, w: 0.7070234}
-  m_LocalPosition: {x: 0.8474555, y: 0.63369286, z: 1.7856003}
+  m_LocalPosition: {x: 2.087, y: 0.0016, z: 0}
   m_LocalScale: {x: 7.5739255, y: 7.573926, z: 7.5739255}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -141,7 +141,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.26415172
+        value: 0.45523754
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15c4e6d52a185347936b371a2c24c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: -2
+  _speed: 4
   _trailSystem: {fileID: 4565520730474262546}
 --- !u!114 &5096384981002940699
 MonoBehaviour:
@@ -429,7 +429,7 @@ MonoBehaviour:
   maxEmbedDepth: 0.15
   ignoreLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 72
   tip: {fileID: 6356303529012673768}
 --- !u!65 &6808754496163022361
 BoxCollider:
@@ -444,7 +444,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 72
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
