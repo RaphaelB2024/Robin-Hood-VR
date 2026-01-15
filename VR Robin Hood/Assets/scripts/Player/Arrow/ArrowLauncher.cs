@@ -7,9 +7,6 @@ public class ArrowLauncher : MonoBehaviour
     [Header("Launch Settings")]
     [SerializeField] private float _speed = 10f;
 
-    [Header("Visual Effects")]
-    [SerializeField] private GameObject _trailSystem;
-
     private Rigidbody _rigidbody;
     private bool _inAir = false;
     private XRPullInteractable _pullInteractable;
@@ -57,14 +54,12 @@ public class ArrowLauncher : MonoBehaviour
         Vector3 force = -transform.right * value * _speed;
         _rigidbody.AddForce(force, ForceMode.Impulse);
 
-        _trailSystem.SetActive(true);
     }
 
     public void StopFlight()
     {
         _inAir = false;
         SetPhysics(false);
-        _trailSystem.SetActive(false);
     }
 
     private void SetPhysics(bool usePhysics)

@@ -38,7 +38,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Interactables
             PullActionReleased?.Invoke(pullAmount);
             PullEnded?.Invoke();
             _pullingInteractor = null;
-            pullAmount = 0.0f;
+            pullAmount = 0f;
             _notchPoint.transform.localPosition = new Vector3(_notchPoint.transform.localPosition.x, _notchPoint.transform.localPosition.y, 0f);
             UpdateStringAndNotch();
         }
@@ -83,7 +83,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Interactables
 
         private void UpdateStringAndNotch()
         {
-            Vector3 linePosition = Vector3.Lerp(_startPoint.localPosition, _endPoint.localPosition, pullAmount);
+            Vector3 linePosition = Vector3.Lerp(_startPoint.localPosition, _endPoint.localPosition, pullAmount -0.2f);
             _notchPoint.transform.localPosition = linePosition;
             _lineRenderer.SetPosition(1, linePosition);
         }

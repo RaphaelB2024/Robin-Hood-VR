@@ -10,12 +10,23 @@ public class sceneController : MonoBehaviour
     public GameObject[] targets;
     public SpriteRenderer fadeScreenRenderer;
 
+    [SerializeField] public bool timeMode;
+    [SerializeField] public bool targetMode;
+
 
     private void Update()
     {
-        timer -= Time.deltaTime;
 
-        if (timer == 0f || targets.Length == 0)
+        if (timeMode)
+        {
+            timer -= Time.deltaTime;
+            if(timer <= 0)
+            {
+                StartCoroutine(NextScene());
+            }
+        }
+
+        else if(targets.Length == 0 && targetMode)
         {
             StartCoroutine(NextScene());
         }
