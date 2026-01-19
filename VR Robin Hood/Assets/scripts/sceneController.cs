@@ -6,31 +6,24 @@ using UnityEngine.SceneManagement;
 
 public class sceneController : MonoBehaviour
 {
-    [SerializeField] public float timer;
     public GameObject[] targets;
-    public SpriteRenderer fadeScreenRenderer;
 
-    [SerializeField] public bool timeMode;
+    public GameObject fadeScreen;
+    private SpriteRenderer fadeScreenRenderer;
+
     [SerializeField] public bool targetMode;
 
-    public AudioSource badToTheBone;
+    public AudioSource sceneDialogue;
+    float fadeSpeed = 1f;
 
     private bool next = true;
-
+    int currentScene;
+    
 
     private void Update()
     {
-        /*
-        if (timeMode)
-        {
-            timer -= Time.deltaTime;
-            if(timer <= 0f)
-            {
-                StartCoroutine(NextScene());
-            }
-        }*/
 
-        if (!badToTheBone.isPlaying && next)
+        if (!sceneDialogue.isPlaying && next)
         {
             Debug.Log("no bad to the bone. So next scene");
             StartCoroutine(NextScene());
@@ -43,22 +36,27 @@ public class sceneController : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        currentScene = SceneManager.GetActiveScene().buildIndex + 1;
+        fadeScreenRenderer = fadeScreen.GetComponent<SpriteRenderer>();
+    }
+
     private IEnumerator NextScene()
     {
         next = false;
         while(fadeScreenRenderer.color.a < 100)
         {
-            Debug.Log("fadeScreenRenderer.colour.a < 100");
-            Color temporary = fadeScreenRenderer.GetComponent<SpriteRenderer>().color;  
-            temporary.a += Time.deltaTime;
+            Color temporary = fadeScreenRenderer.GetComponent<SpriteRenderer>().color;
+            temporary.a += Time.deltaTime * fadeSpeed;
             fadeScreenRenderer.color = temporary;
+            Debug.Log("screen alpha is:" + fadeScreenRenderer.color);
         }
         if(fadeScreenRenderer.color.a >= 100)
         {
             Debug.Log("SceneManager.LoadScene()");
-            //   SceneManager.LoadScene();
+            SceneManager.LoadScene(currentScene);
         }
-
-        return null;
+        yield break;
     }
 }
