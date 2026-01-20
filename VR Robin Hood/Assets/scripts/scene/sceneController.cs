@@ -8,28 +8,49 @@ public class sceneController : MonoBehaviour
 {
     public GameObject[] targets;
 
-    public GameObject fadeScreen;
+    public AudioClip[] dialogues;
+    private AudioClip activeDialogue;
+    private int DialogueNumber = -1;
+
+    fadeScript fadeScript;
     private SpriteRenderer fadeScreenRenderer;
 
     [SerializeField] public bool targetMode;
 
     public AudioSource sceneDialogue;
-    float fadeSpeed = 1f;
+    public float fadeSpeed = 1f;
 
-    private bool next = true;
+    private bool next = false;
     int currentScene;
     
 
     private void Update()
     {
-
         if (!sceneDialogue.isPlaying && next)
         {
-            Debug.Log("no bad to the bone. So next scene");
+            Debug.Log("dialogue ended, swap scene");
             StartCoroutine(NextScene());
         }
+        else if(!sceneDialogue.isPlaying && !next)
+        {
+            if(DialogueNumber < dialogues.Length -1) 
+            {
+                DialogueNumber++;
+                Debug.Log(DialogueNumber);
+            }
 
-        else if(targets.Length == 0 && targetMode)
+            activeDialogue = dialogues[DialogueNumber];
+            sceneDialogue.clip = activeDialogue;
+            sceneDialogue.Play();
+
+            if(DialogueNumber == dialogues.Length -1)
+            {
+                next = true;
+                Debug.Log("next is true");
+            }
+        }
+
+        else if(targets.Length == 0 && targetMode && next)
         {
             Debug.Log("Target mode next scene");
             StartCoroutine(NextScene());
@@ -39,7 +60,6 @@ public class sceneController : MonoBehaviour
     private void Awake()
     {
         currentScene = SceneManager.GetActiveScene().buildIndex + 1;
-        fadeScreenRenderer = fadeScreen.GetComponent<SpriteRenderer>();
     }
 
     private IEnumerator NextScene()
@@ -47,14 +67,10 @@ public class sceneController : MonoBehaviour
         next = false;
         while(fadeScreenRenderer.color.a < 100)
         {
-            Color temporary = fadeScreenRenderer.GetComponent<SpriteRenderer>().color;
-            temporary.a += Time.deltaTime * fadeSpeed;
-            fadeScreenRenderer.color = temporary;
-            Debug.Log("screen alpha is:" + fadeScreenRenderer.color);
+            fadeScript;
         }
         if(fadeScreenRenderer.color.a >= 100)
         {
-            Debug.Log("SceneManager.LoadScene()");
             SceneManager.LoadScene(currentScene);
         }
         yield break;
