@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class Target : MonoBehaviour
+public class chestHit : MonoBehaviour
 {
-    sceneController controller;
+    pointManager pointManager;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("ArrowTip"))
         {
-            
+            pointManager.points += 100;
             gameObject.SetActive(false);
         }
     }
