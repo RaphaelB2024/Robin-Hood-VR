@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class fadeScript : MonoBehaviour
 {
     public float inspeed = 5;
     public float outspeed = 5;
+
+    public SpriteRenderer fadeRenderer;
     public void FadeIn()
     {
         StartCoroutine(startFadeIn());
+    }
+    private void Awake()
+    {
+        fadeRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -18,26 +25,35 @@ public class fadeScript : MonoBehaviour
 
     IEnumerator startFadeIn()
     {
-        CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
-        while (canvasGroup.alpha < 1)
+        float alphaValue = fadeRenderer.color.a;
+        Color temporaryColour = fadeRenderer.color;
+
+        while (fadeRenderer.color.a < 100)
         {
-            canvasGroup.alpha += Time.deltaTime / inspeed;
-            yield return null;
+            alphaValue += inspeed;
+            temporaryColour.a = alphaValue;
+            fadeRenderer.color = temporaryColour;
+
+            yield return new WaitForEndOfFrame();
+
         }
-        canvasGroup.interactable = false;
-        yield return null;
+        yield break;
     }
 
     IEnumerator startFadeOut()
     {
-        CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
-        while (canvasGroup.alpha > 0)
+        float alphaValue = fadeRenderer.color.a;
+        Color temporaryColour = fadeRenderer.color;
+
+        while (fadeRenderer.color.a > 0)
         {
-            Debug.Log("FadeOut");
-            canvasGroup.alpha -= Time.deltaTime / outspeed;
-            yield return null;
+            alphaValue -= outspeed;
+            temporaryColour.a = alphaValue;
+            fadeRenderer.color = temporaryColour;
+
+            yield return new WaitForEndOfFrame();
+
         }
-        canvasGroup.interactable = false;
-        yield return null;
+        yield break;
     }
 }

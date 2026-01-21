@@ -12,31 +12,29 @@ public class sceneController : MonoBehaviour
     private AudioClip activeDialogue;
     private int DialogueNumber = -1;
 
-    fadeScript fadeScript;
-    private SpriteRenderer fadeScreenRenderer;
+    public fadeScript fadeObject;
 
     [SerializeField] public bool targetMode;
 
     public AudioSource sceneDialogue;
     public float fadeSpeed = 1f;
 
-    private bool next = false;
+    private bool nextScene = false;
     int currentScene;
     
 
     private void Update()
     {
-        if (!sceneDialogue.isPlaying && next)
+        if (!sceneDialogue.isPlaying && nextScene && !targetMode)
         {
             Debug.Log("dialogue ended, swap scene");
             StartCoroutine(NextScene());
         }
-        else if(!sceneDialogue.isPlaying && !next)
+        else if(!sceneDialogue.isPlaying && !nextScene)
         {
             if(DialogueNumber < dialogues.Length -1) 
             {
                 DialogueNumber++;
-                Debug.Log(DialogueNumber);
             }
 
             activeDialogue = dialogues[DialogueNumber];
@@ -45,12 +43,12 @@ public class sceneController : MonoBehaviour
 
             if(DialogueNumber == dialogues.Length -1)
             {
-                next = true;
+                nextScene = true;
                 Debug.Log("next is true");
             }
         }
 
-        else if(targets.Length == 0 && targetMode && next)
+        else if(targets.Length == 0 && targetMode && nextScene)
         {
             Debug.Log("Target mode next scene");
             StartCoroutine(NextScene());
@@ -62,17 +60,16 @@ public class sceneController : MonoBehaviour
         currentScene = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
+
     private IEnumerator NextScene()
     {
-        next = false;
-        while(fadeScreenRenderer.color.a < 100)
-        {
-            fadeScript;
-        }
-        if(fadeScreenRenderer.color.a >= 100)
-        {
-            SceneManager.LoadScene(currentScene);
-        }
+        nextScene = false;
+        Debug.Log("start fade in");
+        fadeObject.FadeIn();
+
+        yield return new WaitForSeconds(3);
+
+        SceneManager.LoadScene(currentScene);
         yield break;
     }
 }
