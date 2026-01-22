@@ -15,6 +15,7 @@ public class sceneController : MonoBehaviour
     public fadeScript fadeObject;
 
     [SerializeField] public bool targetMode;
+    public int targetsShot = 0;
 
     public AudioSource sceneDialogue;
     public float fadeSpeed = 1f;
@@ -48,7 +49,7 @@ public class sceneController : MonoBehaviour
             }
         }
 
-        else if(targets.Length == 0 && targetMode && nextScene)
+        else if(targetsShot == targets.Length && targetMode && nextScene)
         {
             Debug.Log("Target mode next scene");
             StartCoroutine(NextScene());

@@ -8,7 +8,7 @@ public class Target : MonoBehaviour
     {
         if (other.gameObject.CompareTag("ArrowTip"))
         {
-            
+            controller.targetsShot++;
             gameObject.SetActive(false);
         }
     }
