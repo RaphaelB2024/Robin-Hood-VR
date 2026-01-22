@@ -9,7 +9,6 @@ public class ArrowImpact : MonoBehaviour
     [SerializeField] private float minEmbedDepth = 0.05f;
     [SerializeField] private float maxEmbedDepth = 0.15f;
     [SerializeField] private LayerMask ignoreLayers;
-    [SerializeField] private Transform tip;
 
     private ArrowLauncher arrowLauncher;
     private Rigidbody rb;
@@ -25,46 +24,16 @@ public class ArrowImpact : MonoBehaviour
     {
         if (hasHit || ((1 << collision.gameObject.layer) % ignoreLayers) != 0)
         {
-            return;
+            StartCoroutine(DespawnAfterDelay());
         }
 
         hasHit = true;
         arrowLauncher.StopFlight();
-        HandleStick(collision);
     }
-
-    private void HandleStick(Collision collision)
-    {
-        Vector3 arrowDirection = transform.forward;
-        Vector3 arrowUp = transform.up;
-        ContactPoint contact = collision.GetContact(0);
-
-        float randomDepth = Random.Range(minEmbedDepth, maxEmbedDepth);
-        Quaternion finalRotation = Quaternion.LookRotation(arrowDirection, arrowUp);
-        Vector3 centreOffset = tip.localPosition;
-        Vector3 finalPosition = contact.point - (finalRotation * centreOffset) + contact.normal * randomDepth;
-
-        transform.SetParent(collision.transform, true);
-        StartCoroutine(DespawnAfterDelay());
-    }
-
-    public ConfigurableJoint CreateStabJoint(Collision collision, float randomDepth)
-   {
-        var joint = gameObject.AddComponent<ConfigurableJoint>();
-        joint.connectedBody = collision.rigidbody;
-        joint.xMotion = ConfigurableJointMotion.Limited;
-        joint.yMotion = ConfigurableJointMotion.Locked;
-        joint.zMotion = ConfigurableJointMotion.Locked;
-
-        var limit = joint.linearLimit;
-        limit.limit = randomDepth;
-        joint.linearLimit = limit;
-
-        return joint;
-   }
 
     private IEnumerator DespawnAfterDelay()
     {
+        rb.constraints = RigidbodyConstraints.FreezeAll;
         yield return new WaitForSeconds(stickDuration);
         Destroy(gameObject);
     }

@@ -19,7 +19,7 @@ public class ArrowLauncher : MonoBehaviour
 
     private void InitialiseComponents()
     {
-        _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody = GetComponentInChildren<Rigidbody>();
         if(_rigidbody == null)
         {
             Debug.LogError($"Rigid component not found");

@@ -45,8 +45,6 @@ public class ArrowSpawner : MonoBehaviour
             Destroy(currentArrow);
             NotchEmpty(1f);
         }
-
-        //StartCoroutine(DelayedSpawn());
     }
 
     private void NotchEmpty(float value)

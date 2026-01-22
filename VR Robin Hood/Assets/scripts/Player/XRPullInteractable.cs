@@ -16,6 +16,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Interactables
         [SerializeField] private Transform _endPoint;
         [SerializeField] private GameObject _notchPoint;
 
+        public float arrowXOffset = 0f;
+
         public float pullAmount { get; private set; } = 0.0f;
 
         private LineRenderer _lineRenderer;
@@ -83,9 +85,9 @@ namespace UnityEngine.XR.Interaction.Toolkit.Interactables
 
         private void UpdateStringAndNotch()
         {
-            Vector3 linePosition = Vector3.Lerp(_startPoint.localPosition, _endPoint.localPosition, pullAmount -0.2f);
+            Vector3 linePosition = Vector3.Lerp(_startPoint.localPosition, _endPoint.localPosition, pullAmount);
             _notchPoint.transform.localPosition = linePosition;
-            _lineRenderer.SetPosition(1, linePosition);
+            _lineRenderer.SetPosition(1, new Vector3(linePosition.x - arrowXOffset, 0, 0));
         }
 
         private void HandleHaptics()

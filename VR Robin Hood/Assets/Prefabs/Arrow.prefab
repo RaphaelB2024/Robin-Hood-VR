@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 750790090477946372}
   m_Layer: 0
   m_Name: ArrowPhysics
-  m_TagString: Untagged
+  m_TagString: ArrowTip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8063728023643067510}
-  - {fileID: 2574312159032054437}
   m_Father: {fileID: 4903800324435855810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1025535701279072346
@@ -81,7 +80,7 @@ MonoBehaviour:
   ignoreLayers:
     serializedVersion: 2
     m_Bits: 72
-  tip: {fileID: 2574312159032054437}
+  tip: {fileID: 0}
 --- !u!65 &750790090477946372
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103,59 +102,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.330902, y: 0.040355697, z: 0.039978404}
   m_Center: {x: 0.9252948, y: -0.0011599399, z: -0.0035348402}
---- !u!1 &5689063115743572371
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2574312159032054437}
-  - component: {fileID: 2762005510366625936}
-  m_Layer: 0
-  m_Name: Tip
-  m_TagString: ArrowTip
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2574312159032054437
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5689063115743572371}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.010859961, y: 0.7070234, z: -0.010859961, w: 0.7070234}
-  m_LocalPosition: {x: -0.301, y: -0.0013, z: 0.0009}
-  m_LocalScale: {x: 7.5739255, y: 7.573926, z: 7.5739255}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6009892578071511298}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &2762005510366625936
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5689063115743572371}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.005
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7612003261353552677
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +112,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4903800324435855810}
   - component: {fileID: 1430120052681496706}
-  - component: {fileID: 1131840257169943134}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -183,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 7612003261353552677}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.29324, y: -0.0018651, z: 0.0007983}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.69297945, y: 0.69297945, z: 0.69297945}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -203,33 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 4
---- !u!54 &1131840257169943134
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7612003261353552677}
-  serializedVersion: 5
-  m_Mass: 0.1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8947407877911312943
 GameObject:
   m_ObjectHideFlags: 0
