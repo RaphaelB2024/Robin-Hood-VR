@@ -4,7 +4,7 @@ public class Target : MonoBehaviour
 {
     sceneController controller;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnColliderEnter(Collider other)
     {
         if (other.gameObject.CompareTag("ArrowTip"))
         {
