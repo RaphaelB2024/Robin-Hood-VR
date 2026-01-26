@@ -28,7 +28,6 @@ public class ArrowImpact : MonoBehaviour
         }
 
         hasHit = true;
-        arrowLauncher.StopFlight();
     }
 
     private IEnumerator DespawnAfterDelay()

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    sceneController controller;
+    public sceneController controller;
 
     private void OnColliderEnter(Collider other)
     {
