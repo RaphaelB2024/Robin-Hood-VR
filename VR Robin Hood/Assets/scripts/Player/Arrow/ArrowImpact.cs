@@ -6,8 +6,6 @@ public class ArrowImpact : MonoBehaviour
 {
     [Header("Impact Settings")]
     [SerializeField] private float stickDuration = 3f;
-    [SerializeField] private float minEmbedDepth = 0.05f;
-    [SerializeField] private float maxEmbedDepth = 0.15f;
     [SerializeField] private LayerMask ignoreLayers;
 
     private ArrowLauncher arrowLauncher;
