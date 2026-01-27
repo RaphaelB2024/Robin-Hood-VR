@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 750790090477946372}
   m_Layer: 0
   m_Name: ArrowPhysics
-  m_TagString: ArrowTip
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,8 +99,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.330902, y: 0.040355697, z: 0.039978404}
-  m_Center: {x: 0.9252948, y: -0.0011599399, z: -0.0035348402}
+  m_Size: {x: 2.2343907, y: 0.040355697, z: 0.039978404}
+  m_Center: {x: 0.97355074, y: -0.0011599398, z: -0.0035348416}
 --- !u!1 &7612003261353552677
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 1430120052681496706}
   m_Layer: 0
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: ArrowTip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

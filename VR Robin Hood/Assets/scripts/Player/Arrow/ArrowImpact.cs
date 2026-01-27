@@ -11,6 +11,7 @@ public class ArrowImpact : MonoBehaviour
     [SerializeField] private LayerMask ignoreLayers;
 
     private ArrowLauncher arrowLauncher;
+    private sceneController controller;
     private Rigidbody rb;
     private bool hasHit = false;
 
@@ -18,6 +19,7 @@ public class ArrowImpact : MonoBehaviour
     {
         arrowLauncher = GetComponent<ArrowLauncher>();
         rb = GetComponent<Rigidbody>();
+        controller = FindFirstObjectByType<sceneController>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -25,8 +27,13 @@ public class ArrowImpact : MonoBehaviour
         if (hasHit || ((1 << collision.gameObject.layer) % ignoreLayers) != 0)
         {
             StartCoroutine(DespawnAfterDelay());
-        }
 
+            if (collision.gameObject.CompareTag("Target"))
+            {
+                Destroy(collision.gameObject);
+                controller.targetsShot++;
+            }
+        }
         hasHit = true;
     }
 
@@ -34,6 +41,7 @@ public class ArrowImpact : MonoBehaviour
     {
         rb.constraints = RigidbodyConstraints.FreezeAll;
         yield return new WaitForSeconds(stickDuration);
+        Destroy(arrowLauncher.gameObject);
         Destroy(gameObject);
     }
    

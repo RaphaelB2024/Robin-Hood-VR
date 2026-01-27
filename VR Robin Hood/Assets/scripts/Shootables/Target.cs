@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Target : MonoBehaviour
@@ -6,10 +7,10 @@ public class Target : MonoBehaviour
 
     private void OnColliderEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("ArrowTip"))
+        if (other.gameObject.CompareTag("ArrowTip") )
         {
             controller.targetsShot++;
-            gameObject.SetActive(false);
+            Debug.Log("Target Shot");
         }
     }
 }

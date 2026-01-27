@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ArrowTip
   - Floor
+  - Target
   layers:
   - Default
   - TransparentFX
