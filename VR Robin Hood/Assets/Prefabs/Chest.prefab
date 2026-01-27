@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28b4e1e091e0dbb4288c66fd27db4de8, type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -77,7 +81,7 @@ PrefabInstance:
       addedObject: {fileID: 6820204238330795103}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28b4e1e091e0dbb4288c66fd27db4de8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6805987634770505075}
+      addedObject: {fileID: 7585639474580134212}
   m_SourcePrefab: {fileID: 100100000, guid: 28b4e1e091e0dbb4288c66fd27db4de8, type: 3}
 --- !u!1 &4034009268469082029 stripped
 GameObject:
@@ -105,7 +109,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.022353427, y: 0.00953903, z: 0.010017967}
   m_Center: {x: -0.000005932719, y: 0.006539249, z: -0.000052601594}
---- !u!114 &6805987634770505075
+--- !u!114 &7585639474580134212
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,6 +118,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4034009268469082029}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31b37dbfd7504fd4d967fdac210a7164, type: 3}
+  m_Script: {fileID: 11500000, guid: b0295bd59e536b641a09cf9a0e5c5713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsManager: {fileID: 0}
+  pointValue: 0
+  shootable: 1

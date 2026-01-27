@@ -12,6 +12,7 @@ public class ArrowImpact : MonoBehaviour
 
     private ArrowLauncher arrowLauncher;
     private sceneController controller;
+    private Target targetHit;
     private Rigidbody rb;
     private bool hasHit = false;
 
@@ -30,8 +31,12 @@ public class ArrowImpact : MonoBehaviour
 
             if (collision.gameObject.CompareTag("Target"))
             {
-                Destroy(collision.gameObject);
-                controller.targetsShot++;
+                targetHit = collision.gameObject.GetComponent<Target>();
+                if(targetHit.shootable)
+                {
+                    controller.targetsShot++;
+                    targetHit.shootable = false;
+                }
             }
         }
         hasHit = true;

@@ -3,14 +3,16 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    public sceneController controller;
+    public pointManager pointsManager;
+    public int pointValue;
+    public bool shootable = true;
+    private bool claimed = false;
 
-    private void OnColliderEnter(Collider other)
+    private void Update()
     {
-        if (other.gameObject.CompareTag("ArrowTip") )
+        if(!shootable && !claimed)
         {
-            controller.targetsShot++;
-            Debug.Log("Target Shot");
+            pointsManager.points += pointValue;
         }
     }
 }
