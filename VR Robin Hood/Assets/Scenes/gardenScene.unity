@@ -9750,7 +9750,10 @@ MonoBehaviour:
   - {fileID: 1279175262}
   - {fileID: 906087313}
   dialogues:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 5e5ea3df45c15894b81c988a6750de2d, type: 3}
+  - {fileID: 8300000, guid: 2e3d16a1de16a934e801cdd705d4c176, type: 3}
+  - {fileID: 8300000, guid: e956c5d9d92c98540b3b741abcd13f72, type: 3}
+  - {fileID: 8300000, guid: 05c4ef05d04408544a554d1e43e254a3, type: 3}
   fadeObject: {fileID: 1672032815}
   targetMode: 1
   targetsShot: 0

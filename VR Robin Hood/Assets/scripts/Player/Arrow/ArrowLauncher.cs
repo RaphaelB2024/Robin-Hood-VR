@@ -8,7 +8,6 @@ public class ArrowLauncher : MonoBehaviour
     [SerializeField] private float _speed = 10f;
 
     private Rigidbody _rigidbody;
-    private bool _inAir = false;
     private XRPullInteractable _pullInteractable;
 
     private void Awake()
@@ -48,18 +47,11 @@ public class ArrowLauncher : MonoBehaviour
         }
 
         gameObject.transform.parent = null;
-        _inAir = true;
         SetPhysics(true);
 
         Vector3 force = -transform.right * value * _speed;
         _rigidbody.AddForce(force, ForceMode.Impulse);
 
-    }
-
-    public void StopFlight()
-    {
-        _inAir = false;
-        SetPhysics(false);
     }
 
     private void SetPhysics(bool usePhysics)

@@ -13,6 +13,8 @@ public class Target : MonoBehaviour
         if(!shootable && !claimed)
         {
             pointsManager.points += pointValue;
+            shootable = false;
+            claimed = true;
         }
     }
 }
