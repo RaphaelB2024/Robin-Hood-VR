@@ -94,5 +94,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsManager: {fileID: 0}
-  pointValue: 0
+  pointValue: 50
   shootable: 1

@@ -8,6 +8,11 @@ public class Target : MonoBehaviour
     public bool shootable = true;
     private bool claimed = false;
 
+    private void Start()
+    {
+        pointsManager = FindFirstObjectByType<pointManager>();
+    }
+
     private void Update()
     {
         if(!shootable && !claimed)
