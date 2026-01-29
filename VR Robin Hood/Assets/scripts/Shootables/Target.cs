@@ -20,6 +20,7 @@ public class Target : MonoBehaviour
             pointsManager.points += pointValue;
             shootable = false;
             claimed = true;
+            Destroy(gameObject);
         }
     }
 }
