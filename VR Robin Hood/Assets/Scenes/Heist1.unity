@@ -1031,7 +1031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3782847982952729587, guid: 9705ac811a20e1b41be0c6219c6a931e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.12784
+      value: -11.249
       objectReference: {fileID: 0}
     - target: {fileID: 3782847982952729587, guid: 9705ac811a20e1b41be0c6219c6a931e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3130,6 +3130,10 @@ PrefabInstance:
     - target: {fileID: 8191098511636219105, guid: 30c93bfda2637e944994a468e5561348, type: 3}
       propertyPath: m_Name
       value: cash sack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191098511636219105, guid: 30c93bfda2637e944994a468e5561348, type: 3}
+      propertyPath: m_TagString
+      value: Target
       objectReference: {fileID: 0}
     - target: {fileID: 8856170467086474843, guid: 30c93bfda2637e944994a468e5561348, type: 3}
       propertyPath: m_LocalScale.x
