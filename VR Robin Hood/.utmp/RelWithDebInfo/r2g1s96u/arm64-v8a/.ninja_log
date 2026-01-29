@@ -1,0 +1,10 @@
+# ninja log v5
+32	3947	7913917669926688	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	42c4307dbc3f336a
+1	3968	7913917669976710	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	81999db05f61bf3f
+69	3974	7913917670046721	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	1445d15e1caaae1b
+22	3979	7913917670316785	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f66046bd6d795c7e
+83	4081	7913917671437038	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	911e528671df3964
+43	4203	7913917672667324	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f16f3567b911470f
+12	4288	7913917673517521	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	886e6975017727f8
+56	4599	7913917676651868	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	6c281c3e3b9fc566
+4599	4843	7913917679100339	C:/Users/rbranston2024/Documents/GitHub/Robin-Hood-VR/VR Robin Hood/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/r2g1s96u/obj/arm64-v8a/libgame.so	7d718ec8bba53724

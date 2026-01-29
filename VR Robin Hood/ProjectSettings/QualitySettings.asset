@@ -111,8 +111,8 @@ QualitySettings:
     terrainFadeLength: 5
     terrainMaxTrees: 50
     excludedTargetPlatforms:
-    - Android
     - iPhone
+    - Android
   - serializedVersion: 4
     name: Meta Quest (Build Profile)
     pixelLightCount: 2
