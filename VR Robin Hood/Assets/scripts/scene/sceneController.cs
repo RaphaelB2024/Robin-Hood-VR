@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Runtime.InteropServices;
+using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,8 @@ public class sceneController : MonoBehaviour
     public AudioClip[] dialogues;
     private AudioClip activeDialogue;
     private int DialogueNumber = -1;
+    private float bootTimer;
+    public float timeToBoot = 30;
 
     public fadeScript fadeObject;
 
@@ -26,6 +29,8 @@ public class sceneController : MonoBehaviour
 
     private void Update()
     {
+        bootTimer += Time.deltaTime;
+
         if (!sceneDialogue.isPlaying && nextScene && !targetMode)
         {
             Debug.Log("dialogue ended, swap scene");
@@ -52,6 +57,11 @@ public class sceneController : MonoBehaviour
         else if(targetsShot == targets.Length && targetMode && nextScene)
         {
             Debug.Log("Target mode next scene");
+            StartCoroutine(NextScene());
+        }
+
+        else if (bootTimer >= timeToBoot)
+        {
             StartCoroutine(NextScene());
         }
     }

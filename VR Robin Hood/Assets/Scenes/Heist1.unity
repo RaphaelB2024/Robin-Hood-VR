@@ -1451,6 +1451,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3782847982952729587, guid: 9705ac811a20e1b41be0c6219c6a931e, type: 3}
   m_PrefabInstance: {fileID: 831780793}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &862617286 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2818103919636386032, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 611991751}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5c8d85782f4ff49a243be12b0f714e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &885760753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2287,9 +2298,10 @@ MonoBehaviour:
   - {fileID: 288105667}
   - {fileID: 346450195}
   - {fileID: 455719287}
-  - {fileID: 688392771}
-  dialogues: []
-  fadeObject: {fileID: 0}
+  dialogues:
+  - {fileID: 0}
+  timeToBoot: 30
+  fadeObject: {fileID: 862617286}
   targetMode: 1
   targetsShot: 0
   sceneDialogue: {fileID: 1169449555}

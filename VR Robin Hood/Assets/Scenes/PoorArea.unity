@@ -3502,6 +3502,7 @@ MonoBehaviour:
   dialogues:
   - {fileID: 8300000, guid: 61669ebdefeb6fc4ab0c6a7fd1090bed, type: 3}
   - {fileID: 8300000, guid: a12c93cb7ac728a469e03f87e16dc70e, type: 3}
+  timeToBoot: 100
   fadeObject: {fileID: 1074714550}
   targetMode: 0
   targetsShot: 0
