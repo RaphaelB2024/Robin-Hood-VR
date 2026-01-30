@@ -1841,7 +1841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.096
+      value: -0.561
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1877,7 +1877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2245606451038616076, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2818103919636386032, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: inspeed
@@ -3462,8 +3462,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: []
   dialogues:
-  - {fileID: 8300000, guid: 61669ebdefeb6fc4ab0c6a7fd1090bed, type: 3}
-  - {fileID: 8300000, guid: a12c93cb7ac728a469e03f87e16dc70e, type: 3}
+  - {fileID: 8300000, guid: d606895276d006641a36455707fcb893, type: 3}
+  - {fileID: 8300000, guid: 529620a2341d6f049ba7ceadeef66268, type: 3}
   fadeObject: {fileID: 1074714550}
   targetMode: 0
   targetsShot: 0
